@@ -26,6 +26,7 @@ Task sorting: Tasks are displayed in 3 different columns according to their comp
 Persistent storage: Tasks are stored in a csv file and are loaded upon starting the application, allowing users to continue working on their To-Do list across multiple sessions.
 
 Usage:
+Change the resolution of the screen on your device to 100%
 Install Python on your local machine if you don't have it already.
 Clone the repository: git clone https://github.com/IrynaPaltseva/todo_list.git
 Run the application
