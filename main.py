@@ -5,7 +5,7 @@ from tkinter import ttk, messagebox
 import datetime as dt
 from tkcalendar import DateEntry
 
-from helpers.file_service import FileService
+from file_service import FileService
 
 
 def main():
