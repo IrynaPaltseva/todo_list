@@ -16,7 +16,7 @@ def main():
     font_style = ("Times", 10, "bold")
 
     window = t.Tk()
-    window.config(background='#bdc9c0')
+    window.config(background='#94B39A')
     window.title("The Best To Do List Ever!")
     window.geometry("1500x850")
 
@@ -81,22 +81,22 @@ def main():
 
     def openNewWindow(is_update=False):
         global new_window
-        new_window = Toplevel(window, background='#EEA579', padx=20, pady=10)
+        new_window = Toplevel(window, background='#916789', padx=20, pady=10)
         new_window.title("Needs to be done ASAP")
         new_window.geometry("470x350")
         new_window.focus()
 
-        frame_Info = t.LabelFrame(new_window, text="New task", background='#EEA579', font=("Times", 10, 'bold'), padx=20, pady=10)
+        frame_Info = t.LabelFrame(new_window, text="New task", background='#916789', font=("Times", 10, 'bold'), padx=20, pady=10)
         frame_Info.grid()
 
-        title_label = t.Label(frame_Info, text='Title: ', background='#EEA579',  font=("Times", 13), padx=5, pady=5)
+        title_label = t.Label(frame_Info, text='Title: ', background='#916789',  font=("Times", 13), padx=5, pady=5)
         title_label.grid(row=0, column=0, sticky='w')
         nonlocal title_entry
         title_entry = t.Entry(frame_Info, width=40, font=("Times", 10, "bold"))
         title_entry.insert(END, form_data['title'])
         title_entry.grid(row=0, column=1, sticky='w')
 
-        description_label = t.Label(frame_Info, text='Description: ', background='#EEA579', font=("Times", 13), padx=5, pady=5)
+        description_label = t.Label(frame_Info, text='Description: ', background='#916789', font=("Times", 13), padx=5, pady=5)
         description_label.grid(row=1, column=0, sticky='w')
 
         nonlocal description_entry
@@ -105,14 +105,14 @@ def main():
         description_entry.grid(row=1, column=1, ipady=60, sticky='w')
 
         if is_update:
-            description_label = t.Label(frame_Info, text='Status: ', background='#EEA579', font=("Times", 13), padx=5, pady=5)
+            description_label = t.Label(frame_Info, text='Status: ', background='#916789', font=("Times", 13), padx=5, pady=5)
             description_label.grid(row=2, column=0, sticky='w')
             nonlocal edit_status_combobox
             edit_status_combobox = ttk.Combobox(frame_Info, values=status, state='readonly')
             edit_status_combobox.current(status.index(form_data['status']))
             edit_status_combobox.grid(row=2, column=1)
 
-        time_label = t.Label(frame_Info, background='#EEA579', text='Due date: ', font=("Times", 13), padx=5, pady=5)
+        time_label = t.Label(frame_Info, background='#916789', text='Due date: ', font=("Times", 13), padx=5, pady=5)
         time_label.grid(row=3, column=0, sticky='w')
         nonlocal time_entry
         today = date.today()
@@ -128,7 +128,10 @@ def main():
         # button
         button_text = "Update task" if is_update else "Create task"
         button_command = update_single_task if is_update else create_task
-        button_new = t.Button(frame_Info, background='#c96115', text=button_text, font=("Times", 13, "bold"), borderwidth=0, command=button_command)
+        button_new = t.Button(frame_Info, background='#573d52', text=button_text,
+                              font=("Times", 13, "bold"), borderwidth=0,
+                              command=button_command,
+                              padx=5, pady=5)
         button_new.grid(row=5, columnspan=2)
 
     def is_form_valid():
